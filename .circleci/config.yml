@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk-browsers
-      - image: circleci/posgres:9.6.3-alpine
+      - image: circleci/postgres:9.6.3-alpine
         environment:
           POSTGRES_USER: root
           PORTGRES_DB: circle_test
