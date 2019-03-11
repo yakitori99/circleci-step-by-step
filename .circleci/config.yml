@@ -3,9 +3,13 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk-browsers
-      
-      
-      
+      - image: circleci/posgres:9.6.3-alpine
+        environment:
+          POSTGRES_USER: root
+          PORTGRES_DB: circle_test
     steps:
       - checkout
       - run: echo "Hello CircleCI!"
+      - run: 
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 120s
