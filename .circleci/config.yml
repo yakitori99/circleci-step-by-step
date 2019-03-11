@@ -1,4 +1,5 @@
 version: 2
+# comment test
 jobs:
   jdk-8:
     working_directory: ~/circleci-step-by-step
